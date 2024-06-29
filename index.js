@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 const port = 8000;
 
+const tarefaRoutes=require("./src/routes/tarefasRoutes");
+
 app.use(express.json()); // Middleware para analisar JSON no corpo da requisição
 
 app.get("/", (req, res) => {
@@ -42,6 +44,8 @@ app.post("/login", (req, res) => {
     res.status(401).send("E-mail ou senha inválidos");
   }
 });
+
+app.use('/tarefas', tarefaRoutes);
 
 app.all("*", (req, res) => {
   res.status(404).send("Página não encontrada");
