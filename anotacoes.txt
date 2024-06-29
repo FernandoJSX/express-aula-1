@@ -1,0 +1,7 @@
+# Comandos:
+
+npm init -y
+npm i express
+npm i nodemon
+
+npx nodemon index.js -> depois foi inserido package.json na tag scripts
